@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>MusicFinder - App de Identificação Musical</title>
+</head>
+<body>
+    <div class="toggle-btn" onclick="toggleScreens()">Alternar entre telas</div>
+    
+    <div class="container">
+        <!-- Tela 1: Gravação -->
+        <div class="screen recording-screen">
+            <div class="app-header">
+                <div class="logo">MusicFinder</div>
+                <div class="settings-btn">⚙️</div>
+            </div>
+            
+            <div class="main-content">
+                <div class="record-animation">
+                    <div class="record-btn">
+                        <div class="record-icon"></div>
+                    </div>
+                </div>
+                
+                <div class="recording-instructions">Cante, toque ou assobie uma música</div>
+                <div class="recording-status">Toque para começar a ouvir</div>
+            </div>
+            
+            <div class="wave-animation">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+            
+            <div class="bottom-bar">
+                <div class="cancel-btn">Cancelar</div>
+            </div>
+        </div>
+        
+        <!-- Tela 2: Resultados -->
+        <div class="screen results-screen">
+            <div class="result-header">
+                <div class="back-btn">←</div>
+                <div class="result-title">Música encontrada</div>
+            </div>
+            
+            <div class="result-content">
+                <div class="song-card">
+                    <div class="song-cover"></div>
+                    <div class="song-details">
+                        <div class="song-title">Bohemian Rhapsody</div>
+                        <div class="song-artist">Queen</div>
+                        <div class="song-metadata">
+                            <span>1975</span>
+                            <span>5:55</span>
+                            <span>A Night at the Opera</span>
+                        </div>
+                        <div class="action-buttons">
+                            <div class="action-btn listen-btn">Ouvir</div>
+                            <div class="action-btn share-btn">Compartilhar</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="similar-songs">
+                    <div class="section-title">Você também pode gostar</div>
+                    <div class="similar-list">
+                        <div class="similar-item">
+                            <div class="similar-cover"></div>
+                            <div class="similar-info">
+                                <div class="similar-title">We Will Rock You</div>
+                                <div class="similar-artist">Queen</div>
+                            </div>
+                        </div>
+                        <div class="similar-item">
+                            <div class="similar-cover"></div>
+                            <div class="similar-info">
+                                <div class="similar-title">We Are The Champions</div>
+                                <div class="similar-artist">Queen</div>
+                            </div>
+                        </div>
+                        <div class="similar-item">
+                            <div class="similar-cover"></div>
+                            <div class="similar-info">
+                                <div class="similar-title">Don't Stop Me Now</div>
+                                <div class="similar-artist">Queen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="interactions.js"></script>
+
+</body>
+</html>
