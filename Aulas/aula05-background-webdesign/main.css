@@ -1,0 +1,15 @@
+body {
+    background-image: url(images/bg.png);
+    /* background-image define imagem de background fora do html para melhor otimização */
+    background-position: center;
+    /* background-repeat: background-size:  */
+}
+
+h1 {
+    background-image: linear-gradient(#FDC772, #AACCCD);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
