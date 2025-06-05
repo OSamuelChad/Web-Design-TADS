@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 body {
     background-color: #F9F1DC;
@@ -8,15 +8,27 @@ body {
     margin-right: 0;
 }
 
+p {
+    font-size: 18px;
+}
+
+p, address {
+    font-family: garamond;
+}
+
+figure img {
+    width: 100%;
+}
+
 h2 {
-    font-family: Garamond;
     font-style: italic;
+    font-family: Garamond;
     border-bottom: #F5BD26 2px solid;
 }
 
 ul {
     margin: 0 auto;
-    width: 65%;
+    width: 90%;
 }
 
 ul li {
