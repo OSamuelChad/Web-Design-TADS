@@ -1,49 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAW - COMIDA NATURAL</title>
+    <title>Raw Comida Natural</title>
+    <link rel="stylesheet" href="estilos/raw.css">
+    <link rel="stylesheet" href="estilos/comum.css">
 </head>
 <body>
-    
     <header>
-        <h1>
-            <img src="src/logo.png" alt="Logo do Site Raw - Comida Natural">
-        </h1>        
+        <h1><a href="index.html"><img src="imgs/logo.png" alt="logo marca do site"></a></h1>
+        <nav>
+            <ul>
+                <li><a href="cardapio.html">Cardapio</a></li>
+                <li><a href="chefe.html">Chefe</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <section>      
-        <figure>
-            <img src="src/destaque.png" alt="Imagem de Destaque" srcset="">
-        </figure>
-
-        <ul>
-            <li><img src="src/comida1.png" alt="Imagem de Comida 01"></li>
-            <li><img src="src/comida2.png" alt="Imagem de Comida 02"></li>
-            <li><img src="src/comida3.png" alt="Imagem de Comida 03"></li>
-            <li><img src="src/comida4.png" alt="Imagem de Comida 04"></li>
-            <li><img src="src/comida5.png" alt="Imagem de Comida 05"></li>
-            <li><img src="src/comida6.png" alt="Imagem de Comida 06"></li>
-            <li><img src="src/comida7.png" alt="Imagem de Comida 07"></li>
-            <li><img src="src/comida8.png" alt="Imagem de Comida 08"></li>
-            <li><img src="src/comida9.png" alt="Imagem de Comida 09"></li>
-            <li><img src="src/comida10.png" alt="Imagem de Comida 10"></li>
-            <li><img src="src/comida11.png" alt="Imagem de Comida 11"></li>
-            <li><img src="src/comida12.png" alt="Imagem de Comida 12"></li>
-        </ul>
-    </section>
-
-
-    <h2>O chef</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae, maiores officia ullam facilis cum culpa beatae, quidem soluta corrupti placeat tempora magni, facere cumque ad tempore velit possimus doloribus.</p>    
-
-
+       
+    <!-- Conteudo especifico da pagina -->
+    <main>
+        <section>
+            <picture>
+                <source srcset="imgs/destaque.png" media="(min-width:1400px)">
+                <source srcset="imgs/destaque_tablet.png" media="(min-width:1200px)">
+                <img src="imgs/destaque_mobile.png" alt="imagem de destaque">
+            </picture>
+        
+            <ul >
+                <li><img src="imgs/comida1.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida2.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida3.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida4.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida5.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida6.png" alt="imagem de comida ilustrativa"></li>
+    
+                <li><img src="imgs/comida7.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida8.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida9.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida10.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida11.png" alt="imagem de comida ilustrativa"></li>
+                <li><img src="imgs/comida12.png" alt="imagem de comida ilustrativa"></li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2 class="tituoloSecao">O Chefe</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, perferendis voluptate omnis expedita esse excepturi animi sunt a, voluptates culpa 
+                minima, vitae molestiae repellendus debitis autem et ullam suscipit nisi?
+            </p>
+        </section>
+    </main>
+    <!-- Section e navs podem ser repetidos -->
     <footer>
-        <address>Rua Olinto Meira, 379, Cidade Alta</address>
+        <address>
+            Rua Olinto Meira, 379, Cidade Alta
+        </address>
     </footer>
-
-    <link rel="stylesheet" href="main.css">
-
 </body>
 </html>

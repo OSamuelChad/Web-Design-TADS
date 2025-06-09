@@ -1,0 +1,33 @@
+article ul{
+    display: block;
+    width: min-content;
+    margin: 1em auto 2em auto;
+}
+p, span{
+    margin: 0;
+}
+img, b{
+    display: inline-block;
+    vertical-align: middle;
+}
+ul span{
+    margin-left: 36px;
+}
+article li{
+    margin: 10px 0;
+}
+article{
+    height: 100%;
+}
+
+article > span{
+    padding: 0;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+footer{
+    margin-top:2em
+}

@@ -1,0 +1,25 @@
+main, footer{
+    text-align: center;
+}
+
+section ul{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+section ul{
+    padding-left: 0;
+}
+section ul > li{
+    display: inline-block;
+    margin: 0 0.5em;
+    margin-bottom: 1em;
+}
+p{
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+

@@ -1,0 +1,27 @@
+article{
+    text-align: center;
+}
+h2{
+    margin: 0;
+    font-size: 2em;
+}
+span{
+    color: #dda200;
+    font-size: 1.3em;
+}
+h2, span{
+    
+    font-style: italic;
+}
+p{
+    width: 80%;
+    margin: 1em auto;
+    font-size: 1.2em;
+}
+article img{
+    border-top: 3px solid #dda200;
+    border-bottom: 3px solid #dda200;
+}
+footer{
+    margin-top: 1em;
+}

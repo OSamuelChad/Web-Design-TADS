@@ -1,0 +1,49 @@
+h2{
+    margin-bottom: 0;
+    border-bottom: 2px solid #dda200;
+    text-align: center;
+}
+ul{
+    padding: 0;
+}
+ul li{
+    margin-bottom: 1em;
+}
+ul li p{
+    margin: 0;
+    border-bottom: 1px dashed #dda200;
+    padding: 0;
+    padding-bottom: 5px;
+}
+ul li p b{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    vertical-align: middle;
+    color: #dda200;
+    font-size: 1.2em;
+}
+ul li p span{
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #4bb45d;
+    font-size: 1.2em;
+}
+ul li > span{
+    display: block;
+    margin: 0;
+    margin-top: 5px;
+    color: #3a3a3a;
+}
+article{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+}
+
+footer{
+    margin-top: 3em;
+}
