@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li.atual a {
+    color: cadetblue;
+}
+
+/* .atual a {
+    color: red;
+} */
+
+table {
+    border-collapse: collapse;
+    max-width: 70em;
+    margin: 0 auto;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* odd: impar, enven: par */
+tr:nth-child(odd) {
+    background-color: beige;
+}
