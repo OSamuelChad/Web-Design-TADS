@@ -9,39 +9,135 @@
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        background-color: rgb(41, 41, 41); 
-        padding-top: 15em; 
-    }
-
-    th {
-        color:#dddddd;
-    }
-
-    td a {
-        color: #dddddd;
+      background: #0f0f0f;
+      min-height: 100vh;
+      padding: 3rem 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e5e5;
     }
 
     .hero {
-        background-color: #2b2e4b;
-        border: 1px solid #dddddd;
-        width: 50%;
-        margin: 0 auto;
+      width: 100%;
+      max-width: 500px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .hero:hover {
+      border-color: #3a3a3a;
     }
 
     table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
       width: 100%;
-      text-align: center;
+      border-collapse: collapse;
     }
 
-    td,
     th {
-      border: 1px solid #dddddd;
-      padding: 8px;
+      background: #222;
+      color: #fff;
+      padding: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #333;
+    }
+
+    td {
+      border-bottom: 1px solid #2a2a2a;
+      transition: all 0.2s ease;
+    }
+
+    td:hover {
+      background: #252525;
+    }
+
+    td:last-child {
+      border-bottom: none;
+    }
+
+    td a {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      color: #b8b8b8;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    td a:hover {
+      color: #fff;
+      padding-left: 2rem;
+    }
+
+    td a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      background: #4a9eff;
+      transition: width 0.2s ease;
+    }
+
+    td a:hover::before {
+      width: 0.5rem;
+    }
+
+    .coming-soon {
+      opacity: 0.5;
+    }
+
+    .coming-soon:hover {
+      background: #1a1a1a !important;
+    }
+
+    .coming-soon a {
+      cursor: not-allowed;
+      color: #666;
+    }
+
+    .coming-soon a:hover {
+      color: #666;
+      padding-left: 1.5rem;
+    }
+
+    .coming-soon a::before {
+      background: #666;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 2rem 1rem;
+      }
+      
+      th {
+        padding: 1rem;
+        font-size: 1.2rem;
+      }
+      
+      td a {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+      }
+      
+      td a:hover {
+        padding-left: 1.7rem;
+      }
     }
   </style>
   <body>
@@ -51,32 +147,32 @@
           <th>WEBDESIGN-TADS</th>
         </tr>
         <tr>
-            <td><a href="Aulas/aula01-first/">aula01-first</a></td>
+          <td><a href="Aulas/aula01-first/">aula01-first</a></td>
         </tr>
         <tr>
-            <td><a href="Aulas/aula02-second/">aula02-second</a></td>
+          <td><a href="Aulas/aula02-second/">aula02-second</a></td>
         </tr>
         <tr>
-            <td><a href="Aulas/ancoras03-web-design/">ancoras03-web-design</a></td>
+          <td><a href="Aulas/ancoras03-web-design/">ancoras03-web-design</a></td>
         </tr>
         <tr>
-            <td><a href="Aulas/aula04-imagens-webdesign/">aula04-imagens-webdesign</a></td>
+          <td><a href="Aulas/aula04-imagens-webdesign/">aula04-imagens-webdesign</a></td>
         </tr>
         <tr>
-            <td><a href="Aulas/aula05-background-webdesign/">aula05-background-webdesign</a></td>
+          <td><a href="Aulas/aula05-background-webdesign/">aula05-background-webdesign</a></td>
+        </tr>
+        <tr class="coming-soon">
+          <td><a href="#">Deploy em Breve...</a></td>
         </tr>
         <tr>
-            <td><a href="#">Deploy em Breve...</a></td>
-        </tr>
-        <tr>
-            <td><a href="Aulas/aula07-siteraw-webdesign/">aula07-siteraw-webdesign</a></td>
+          <td><a href="Aulas/aula07-siteraw-webdesign/">aula07-siteraw-webdesign</a></td>
         </tr>
         <tr>
           <td><a href="Aulas/aula07-siteraw-webdesign2.0/">site-raw-melhorado</a></td>
-      </tr>
-      <tr>
-        <td><a href="Aulas/aula08-tabelas-webdesign/">aula08-tabelas-webdesign</a></td>
-      </tr>
+        </tr>
+        <tr>
+          <td><a href="Aulas/aula08-tabelas-webdesign/">aula08-tabelas-webdesign</a></td>
+        </tr>
       </table>
     </section>
   </body>
