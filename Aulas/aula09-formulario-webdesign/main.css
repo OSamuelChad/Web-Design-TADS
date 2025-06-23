@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+label {
+    display: inline-block;
+    width: 5em;
+    margin-bottom: 0.5em;
+}
+
+form {
+    border: 1px solid black;
+    padding: 2em;
+    margin: 2em;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: rgb(232, 241, 241);
+}
+
+input:hover {
+    background-color: rgb(201, 217, 217);
+}
+
+input[type='submit'] {
+    border: none;
+    padding: 0.5em;
+    background-color: darkslategray;
+    color: white;
+}
