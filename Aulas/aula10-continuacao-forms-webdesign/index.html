@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SÃO PEDRO - IFRN CNAT</title>
+    <link rel="stylesheet" href="main.css">
+     <!-- Fora da aula -->
+     <style>
+        * {
+            font-family: Comic Sans MS, sans-serif;
+        }
+    </style>
+    <!--  -->
+</head>
+<body>
+    <header>
+        <h1>SÃO PEDRO - IFRN CNAT</h1>
+    </header>
+    <main>
+        <h2>INSCRIÇÃO PARA O EVENTO</h2>
+        <form action="enviar.html">
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome"> <br>
+
+            <label for="email">Email: </label>
+            <input type="email" id="email"> <br>
+
+            <!-- input com lista de dados que podem ser selecionados. Sugere os valores da lista -->
+            <label for="cidade">Cidade: </label>
+            <input type="text" id="cidade" list="cidades">
+            <datalist id="cidades">
+                <option value="natal">Natal</option>
+                <option value="parnamirin">Parnamirin</option>
+            </datalist><br>
+
+            <!-- select não permite edição de valor pelo usuario, ja da todas as opções -->
+            <label for="curso">Curso: </label>
+            <!-- 
+                multiple permite selecionar varios 
+                selected define um valor como inicial 
+                size exibe uma quantidade x de opções    
+            -->
+            <select name="curso" id="curso" multiple size="2">
+                <option value="vazio">Vazio</option>
+                <option selected value="tads">TADS</option>
+                <option value="gestao">Gestão Publica</option>
+                <option value="Redes">Redes de Computadores</option>
+            </select><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <h2>ENQUETE</h2>
+        <form action="enviar.html">
+            <p>Sobre a musica</p>
+            <!-- type radio: bolinha para marcar. tem que estar envolto de um label. name identifica o grupo. Em um gurpo somente um radio pode ser marcado -->
+            <!-- checked: já começa marcado -->
+            <label><input type="radio" name="musicas" value="tudo" checked> Tocar de Tudo</label><br>
+            <label><input type="radio" name="musicas" value="forro"> Só Forro</label><br>
+            <label><input type="radio" name="musicas" value="dj"> Só DJ</label><br>
+            <label><input type="radio" name="musicas" value="sertanejo"> Só Sertanejo</label><br>
+
+            <p>Sobre as comidas</p>
+            <label><input type="radio" name="comidas" value="sem"> Sem comida</label><br>
+            <label><input type="radio" name="comidas" value="tudo"> O que tive</label><br>
+            <label><input type="radio" name="comidas" value="tipicas"> Só tipicas</label><br>
+
+            <input type="submit" value="Votar">
+        </form>
+
+        <form action="enviar.html">
+            <h2>Contato</h2>
+
+            <!-- 
+                input tipo text: texto de uma linha. textarea: texto com varias linhas.
+
+             -->
+            <label for="mensagem">Mensagem</label>
+            <!-- rows: quantidade  de linhas. cols: quantiades de caracteres por linha -->
+            <!-- maxlength: define tamanho maximo de texto. funciona em outros tipos. -->
+            <textarea name="mensagem" id="mensagem" cols="50" rows="5" maxlength="500"></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <form action="enviar.html">
+            <h2>Comidas preferidas</h2>
+            <label><input type="checkbox" name="comida" value="pamonha" checked> Pamonha</label><br>
+            <label><input type="checkbox" name="comida" value="cuscuz" checked> Cuscuz</label><br>
+            <label><input type="checkbox" name="comida" value="milhocozido"> Milho Cozido</label><br>
+            <!-- disabled: disabilita campo, pode representar "tinhamos mas n tem mais". pode ser usado em qualquer tipo de input. -->
+            <label><input type="checkbox" name="comida" value="milhoassado" disabled> Milho Assado</label><br>
+            <input type="submit" value="Votar">
+        </form>
+    </main>
+    <footer>
+        <p>Desenvolvido por IFRN</p>
+    </footer>
+</body>
+</html>
