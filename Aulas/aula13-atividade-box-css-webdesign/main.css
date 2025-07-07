@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    background: linear-gradient(to right, #72CFED, #186C86);
+    margin-top: 0;
+    padding: 1em 3em;
+    border-radius: 4px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+span {
+    color: #005C85;
+    font-weight: lighter;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+h2, p {
+    color: black;
+}
+
+.card {
+    color: #fff;
+    margin-top: 3em;
+    padding: 1.5em;
+    width: 230px;
+    top: 107px;    
+    border-radius: 4px;
+    box-shadow: 0px 0px 3.5px #9D9D9D;
+}
