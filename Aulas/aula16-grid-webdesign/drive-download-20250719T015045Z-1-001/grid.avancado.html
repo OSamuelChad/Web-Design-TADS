@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GRID AVANÇADO</title>
+
+    <style>
+        main {
+            display: grid;
+            gap: 1rem;
+            margin: 0 auto;
+            max-width: 70rem;
+            grid-template-columns: 1fr 2fr 1fr;
+            /* grid-template-columns define a largura das colunas */
+            grid-template-rows: 8rem 16rem 8rem;
+            /* grid-template-rows define a altura das linhas */
+            grid-template-areas: 
+            "nav x x"
+            "nav y y"
+            "nav z w"
+            /* Não é possível realizar mesclagens diagonal ou em L */
+            /* Itens vazios podem estar definidos por um ponto */
+            /* A quantidade de colunas no grid-template-areas precisa estar condizente com a quantidade de definida no grid-template-columns */
+        }
+        section, nav {
+            border: 1px solid black;
+            overflow: nav;
+        }
+        section.a {
+            grid-area: x;
+        }
+        section.b {
+            grid-area: y;
+        }
+        section.c {
+            grid-area: z;
+        }
+        section.d {
+            grid-area: w;
+        }
+        nav {
+            grid-area: nav;
+        }
+    </style>
+</head>
+<body>
+    <!-- Display Grid - Mesclagem vertical -->
+    <main>
+        <nav>
+            <p>NAV</p>
+        </nav>
+        <section class="a">
+            <p>ITEM 1</p>
+        </section>
+        <section class="b">
+            <p>ITEM 2</p>
+        </section>
+        <section class="c">
+            <p>ITEM 3</p>
+        </section>
+        <section class="d">
+            <p>ITEM 4</p>
+        </section>
+    </main>
+</body>
+</html>
