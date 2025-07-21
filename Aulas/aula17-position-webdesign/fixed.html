@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Position-Fixed</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", monospace;
+        font-style: italic;
+      }
+
+      header,
+      main,
+      footer {
+        border: 1px solid #999;
+        padding: 1rem;
+      }
+
+      div#container {
+        margin: 1em auto;
+        max-width: 50rem;
+        background-color: #ddd;
+        padding: 1rem;
+        position: relative;
+        /* position: relative = 1:muitos */
+        z-index: 1;
+      }
+
+      div.cookies {
+        background-color: rgb(213, 245, 73);
+        padding: 2rem;
+        box-shadow: 0 0 0.3rem 0.3rem goldenrod;
+        border-radius: 0.5rem;
+        position: fixed;
+        top: 0.3rem;
+        left: 0;
+        width: 100vw;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cookies">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum incidunt
+        accusantium dolorum possimus similique unde quasi reprehenderit quia aut
+        sapiente culpa, alias nulla veritatis sequi deserunt voluptas ab a
+        natus.
+      </p>
+    </div>
+    <div id="container">
+      <!-- Janela que abre sobre o layout -->
+      <header>
+        <h1>DIA DO AMIGO</h1>
+      </header>
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          quidem deserunt quas perferendis numquam impedit nam placeat eveniet
+          culpa eaque! Eligendi officia ratione delectus non magnam fugiat in
+          excepturi exercitationem?
+        </p>
+        <p>
+          Placeat accusantium omnis natus rerum quisquam quidem saepe doloribus
+          vero inventore, soluta atque, mollitia impedit quasi consequatur sed
+          nobis obcaecati cupiditate fugiat! Amet, sed quod aliquid iste
+          doloremque unde ex.
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          quidem deserunt quas perferendis numquam impedit nam placeat eveniet
+          culpa eaque! Eligendi officia ratione delectus non magnam fugiat in
+          excepturi exercitationem?
+        </p>
+        <p>
+          Placeat accusantium omnis natus rerum quisquam quidem saepe doloribus
+          vero inventore, soluta atque, mollitia impedit quasi consequatur sed
+          nobis obcaecati cupiditate fugiat! Amet, sed quod aliquid iste
+          doloremque unde ex.
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          quidem deserunt quas perferendis numquam impedit nam placeat eveniet
+          culpa eaque! Eligendi officia ratione delectus non magnam fugiat in
+          excepturi exercitationem?
+        </p>
+        <p>
+          Placeat accusantium omnis natus rerum quisquam quidem saepe doloribus
+          vero inventore, soluta atque, mollitia impedit quasi consequatur sed
+          nobis obcaecati cupiditate fugiat! Amet, sed quod aliquid iste
+          doloremque unde ex.
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          quidem deserunt quas perferendis numquam impedit nam placeat eveniet
+          culpa eaque! Eligendi officia ratione delectus non magnam fugiat in
+          excepturi exercitationem?
+        </p>
+        <p>
+          Placeat accusantium omnis natus rerum quisquam quidem saepe doloribus
+          vero inventore, soluta atque, mollitia impedit quasi consequatur sed
+          nobis obcaecati cupiditate fugiat! Amet, sed quod aliquid iste
+          doloremque unde ex.
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          quidem deserunt quas perferendis numquam impedit nam placeat eveniet
+          culpa eaque! Eligendi officia ratione delectus non magnam fugiat in
+          excepturi exercitationem?
+        </p>
+        <p>
+          Placeat accusantium omnis natus rerum quisquam quidem saepe doloribus
+          vero inventore, soluta atque, mollitia impedit quasi consequatur sed
+          nobis obcaecati cupiditate fugiat! Amet, sed quod aliquid iste
+          doloremque unde ex.
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          quidem deserunt quas perferendis numquam impedit nam placeat eveniet
+          culpa eaque! Eligendi officia ratione delectus non magnam fugiat in
+          excepturi exercitationem?
+        </p>
+        <p>
+          Placeat accusantium omnis natus rerum quisquam quidem saepe doloribus
+          vero inventore, soluta atque, mollitia impedit quasi consequatur sed
+          nobis obcaecati cupiditate fugiat! Amet, sed quod aliquid iste
+          doloremque unde ex.
+        </p>
+        <p>
+          Consequatur quos, ab quae nemo molestias ex odit aspernatur est
+          tenetur, blanditiis iste dolorum unde sed eligendi veniam corporis
+          consectetur dolor reiciendis eum exercitationem libero et fugit, sit
+          beatae. Voluptatibus!
+        </p>
+        <p>
+          Hic quae commodi eius labore aut voluptatem, veniam, deleniti magnam
+          iure suscipit doloribus porro tempore ut temporibus natus debitis
+          accusamus praesentium enim nihil ad? Molestias fuga incidunt
+          doloremque! Possimus, quidem.
+        </p>
+        <p>
+          Accusamus cupiditate quaerat pariatur consequuntur nemo dignissimos,
+          quae tenetur eveniet illum ipsa earum necessitatibus animi, minus
+          nesciunt, perspiciatis itaque porro omnis tempora quisquam a
+          voluptatem quo! Aut non nobis officiis!
+        </p>
+      </main>
+      <footer>
+        <p>Desenvolvido por IFRN</p>
+        <a href="/Aulas/aula17-position-webdesign/fixed-vertical.html">fixed-vertical</a>
+      </footer>
+    </div>
+  </body>
+</html>

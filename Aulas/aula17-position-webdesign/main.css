@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", monospace;
+  font-style: italic;
+}
+
+header,
+main,
+footer {
+  border: 1px solid #999;
+  padding: 1rem;
+}
+
+div#container {
+  margin: 1em auto;
+  max-width: 50rem;
+  background-color: #ddd;
+  padding: 1rem;
+  position: relative;
+  /* position: relative = 1:muitos */
+}
+
+div.modal {
+  background-color: greenyellow;
+  padding: 2rem;
+  box-shadow: 0 0 0.3rem 0.3rem gray;
+  border-radius: 0.3rem;
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  top: 0;
+  left: 20rem;
+  /* escolher entre top e bottom | left e rigth */
+}
