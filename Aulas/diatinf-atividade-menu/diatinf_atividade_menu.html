@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu DIATINF</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: #f5f5f5;
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+      }
+
+      nav > ul > li {
+        position: relative;
+      }
+
+      nav a {
+        display: block;
+        padding: 12px 18px;
+        text-decoration: none;
+        color: white;
+        background-color: #6b9b9e;
+        text-align: center;
+        font-weight: normal;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #5a8a8d;
+      }
+
+      nav ul ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        visibility: hidden;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 5px;
+        transition: visibility 0s linear 0.2s;
+      }
+
+      nav ul ul li {
+        width: 100%;
+        min-width: 180px;
+      }
+
+      nav ul ul a {
+        text-align: left;
+        padding: 10px 15px;
+      }
+
+      nav > ul > li:hover > ul {
+        visibility: visible;
+        transition-delay: 0s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">A Diretoria</a>
+            <ul>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Identidade Visual</a></li>
+              <li><a href="#">Pedagogia</a></li>
+              <li><a href="#">Pesquisa e Extensão</a></li>
+              <li><a href="#">COLABINF</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Horários</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Docentes</a></li>
+          <li>
+            <a href="#">Documentos</a>
+            <ul>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Identidade Visual</a></li>
+              <li><a href="#">Pedagogia</a></li>
+              <li><a href="#">Pesquisa e Extensão</a></li>
+              <li><a href="#">COLABINF</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Eventos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
