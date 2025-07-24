@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+header {
+  background-image: linear-gradient(to left, #7292a6, #224459);
+  color: #fff;
+  padding: 1.5em 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  animation: slideInFromTop 0.8s ease-out;
+}
+header p {
+  font-size: 1.3em;
+}
+
+main {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: 1.2fr 1fr 1.5fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "navigation about program program amanda"
+    "navigation list registration natalia henrique"
+    "navigation larissa registration organization organization";
+  width: 100%;
+  animation: fadeIn 1s ease-in 0.3s both;
+}
+section {
+  background-color: #ececec;
+  padding: 1.5em;
+  overflow: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+section ul {
+  margin: 0 1em;
+}
+section ul li {
+  margin-bottom: 0.5em;
+  transition: color 0.2s ease;
+}
+section ul li:hover {
+  color: #224459;
+  cursor: pointer;
+}
+
+.speaker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.speaker:hover {
+  transform: scale(1.05);
+}
+.speaker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+.speaker:hover::before {
+  background: rgba(0, 0, 0, 0.4);
+}
+.speaker h2 {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1em;
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.speaker:hover h2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+}
+
+#navigation {
+  grid-area: navigation;
+  background-color: #c4d0d9;
+  font-size: 2em;
+}
+#navigation ol {
+  list-style: none;
+}
+#navigation ol li {
+  margin-bottom: 1.3em;
+  transition: transform 0.2s ease;
+}
+#navigation ol li:hover {
+  transform: translateX(10px);
+}
+#navigation ol li a {
+  text-decoration: none;
+  color: #32738b;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+#navigation ol li a:hover {
+  color: #224459;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#about {
+  grid-area: about;
+}
+#about {
+  line-height: 2em;
+}
+#about b {
+  font-weight: normal;
+  color: #214458;
+  transition: color 0.2s ease;
+}
+#about b:hover {
+  color: #32738b;
+}
+#about button {
+  background-color: transparent;
+  border: none;
+  margin-top: 0.5em;
+  transition: transform 0.2s ease;
+}
+#about button:hover {
+  transform: scale(1.1);
+}
+#about a {
+  text-decoration: none;
+  color: #214458;
+  border: 1px solid #214458;
+  padding: 2px 5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+#about a:hover {
+  background-color: #214458;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#program {
+  grid-area: program;
+}
+#program h2 {
+  margin-bottom: 0.5em;
+  transition: color 0.2s ease;
+}
+#program h2:hover {
+  color: #224459;
+}
+#program table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#program table td {
+  border: 1px solid #fff;
+  padding: 5px;
+  padding-left: 3em;
+  transition: background-color 0.2s ease;
+}
+#program table td:hover {
+  background-color: rgba(34, 68, 89, 0.1);
+}
+#program table td.hour {
+  padding-left: 0;
+  text-align: center;
+}
+
+#amanda {
+  grid-area: amanda;
+  background-image: url('palestrantes/amanda.jpg');
+}
+#list {
+  grid-area: list;
+}
+#registration {
+  grid-area: registration;
+}
+#registration h2 {
+  margin-bottom: 0.8em;
+  transition: color 0.2s ease;
+}
+#registration h2:hover {
+  color: #224459;
+}
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+  display: block;
+  margin-bottom: 1.5em;
+  transition: all 0.3s ease;
+}
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #224459;
+  box-shadow: 0 0 8px rgba(34, 68, 89, 0.3);
+  transform: scale(1.02);
+}
+label {
+  display: flex;
+  align-content: center;
+  margin-bottom: 1.5em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+label:hover {
+  color: #224459;
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+  transition: transform 0.2s ease;
+}
+input[type="checkbox"]:hover {
+  transform: scale(1.2);
+}
+input[type="submit"] {
+  cursor: pointer;
+  border: none;
+  padding: 1em 5em;
+  margin: 0 auto;
+  background-color: #000;
+  color: #707071;
+  transition: all 0.3s ease;
+}
+input[type="submit"]:hover {
+  background-color: #224459;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#natalia {
+  grid-area: natalia;
+  background-image: url('palestrantes/georgia.jpg');
+}
+#henrique {
+  grid-area: henrique;
+  background-image: url('palestrantes/henrique.jpg');
+}
+#larissa {
+  grid-area: larissa;
+  background-image: url('palestrantes/ellen.jpg');
+}
+#organization {
+  grid-area: organization;
+}
+#organization h2 {
+  margin-bottom: 0.7em;
+  transition: color 0.2s ease;
+}
+#organization h2:hover {
+  color: #224459;
+}
+#organization p {
+  margin-bottom: 0.5em;
+  transition: color 0.2s ease;
+}
+#organization p:hover {
+  color: #32738b;
+}
+
+footer {
+  background-color: #224459;
+  text-align: center;
+  color: #fff;
+  padding: 3.5em 0;
+  margin-top: 0.5em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  animation: slideInFromBottom 0.8s ease-out 0.5s both;
+}
+footer:hover {
+  background-color: #32738b;
+}
+footer p {
+  transition: transform 0.2s ease;
+}
+footer:hover p {
+  transform: scale(1.05);
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
