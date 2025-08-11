@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --primary: #1a0b08;
+        --secondary: #8b4513;
+        --accent: #ff6b35;
+        --surface: #ffffff;
+        --surface-dark: #f8f9fa;
+        --text-primary: #2d2d2d;
+        --text-secondary: #6c757d;
+        --text-light: #ffffff;
+        --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #8b4513 100%);
+        --gradient-dark: linear-gradient(135deg, #1a0b08 0%, #3c1810 100%);
+        --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
+        --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
+        --border-radius: 16px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.7;
+        color: var(--text-primary);
+        background: linear-gradient(135deg, #fef7f0 0%, #fff5eb 100%);
+        overflow-x: hidden;
+      }
+
+      /* Header Semântico */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+        transition: var(--transition);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient-primary);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: var(--shadow-soft);
+      }
+
+      /* Navigation Semântica */
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+      }
+
+      nav a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 12px;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      nav a:hover {
+        background: rgba(255, 107, 53, 0.1);
+        color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      nav a.active {
+        background: var(--gradient-primary);
+        color: var(--text-light);
+        box-shadow: var(--shadow-soft);
+      }
+
+      /* Main Content Semântico */
+      main {
+        margin-top: 90px;
+        min-height: calc(100vh - 90px);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Seções */
+      section {
+        margin: 4rem 0;
+      }
+
+      .page-section {
+        display: none;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .page-section.active {
+        display: block;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 6rem 0;
+        background: var(--gradient-primary);
+        color: var(--text-light);
+        border-radius: var(--border-radius);
+        margin: 2rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: var(--surface);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: var(--shadow-strong);
+        transition: var(--transition);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Layout FLEX */
+      .flex-container {
+        display: flex;
+        gap: 2rem;
+        align-items: stretch;
+        margin: 3rem 0;
+      }
+
+      .flex-item {
+        flex: 1;
+        background: var(--surface);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
+      }
+
+      .flex-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .flex-item-large {
+        flex: 2;
+      }
+
+      /* Cards Grid */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .card {
+        background: var(--surface);
+        border-radius: var(--border-radius);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
+        border: 1px solid rgba(255, 107, 53, 0.1);
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-strong);
+      }
+
+      .card-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-primary);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .card p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      /* Article Styling */
+      article {
+        background: var(--surface);
+        border-radius: var(--border-radius);
+        padding: 3rem;
+        box-shadow: var(--shadow-soft);
+        margin: 2rem 0;
+      }
+
+      article h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--primary);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      article h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--secondary);
+        margin: 3rem 0 1.5rem;
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      article h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 100%;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+      }
+
+      article p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-primary);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Image Containers */
+      .image-showcase {
+        width: 100%;
+        height: 400px;
+        background: var(--gradient-primary);
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow-strong);
+      }
+
+      .image-showcase::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      /* Aside Sidebar */
+      aside {
+        background: var(--surface-dark);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        margin: 2rem 0;
+        border-left: 4px solid var(--accent);
+      }
+
+      aside h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Forms */
+      form {
+        background: var(--surface);
+        border-radius: var(--border-radius);
+        padding: 3rem;
+        box-shadow: var(--shadow-soft);
+        margin: 2rem 0;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 1rem;
+        border: 2px solid rgba(255, 107, 53, 0.1);
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: var(--transition);
+        background: var(--surface);
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        transform: translateY(-2px);
+      }
+
+      button {
+        background: var(--gradient-primary);
+        color: var(--text-light);
+        border: none;
+        padding: 1.25rem 3rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow-soft);
+      }
+
+      button:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-strong);
+      }
+
+      /* Price Tables */
+      .price-table {
+        background: var(--surface);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+
+      .price-table:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+      }
+
+      .price-table.featured {
+        border-color: var(--accent);
+        background: var(--gradient-primary);
+        color: var(--text-light);
+        transform: scale(1.05);
+      }
+
+      .price {
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--accent);
+        margin: 1rem 0;
+      }
+
+      .price-table.featured .price {
+        color: var(--text-light);
+      }
+
+      .price-list {
+        list-style: none;
+        margin: 1.5rem 0;
+      }
+
+      .price-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+      }
+
+      /* Footer Semântico */
+      footer {
+        background: var(--gradient-dark);
+        color: var(--text-light);
+        padding: 4rem 0 2rem;
+        margin-top: 6rem;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent);
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+        transform: translateX(5px);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 3rem;
+        padding-top: 2rem;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        main {
+          margin-top: 140px;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+
+        .hero {
+          padding: 4rem 0;
+          margin: 1rem 0;
+        }
+
+        article {
+          padding: 2rem;
+        }
+
+        form {
+          padding: 2rem;
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .flex-container {
+          flex-direction: column;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --surface: #1e1e1e;
+          --surface-dark: #2a2a2a;
+          --text-primary: #ffffff;
+          --text-secondary: #b0b0b0;
+        }
+      }
+    </style>
+    <title>Café Artesanal - Experiência Premium</title>
+  </head>
+  <body>
+    <!-- Header Semântico -->
+    <header role="banner">
+      <div class="header-container">
+        <a href="#" onclick="showPage('home')" class="logo">
+          <div class="logo-icon">☕</div>
+          <span>Café Artesanal</span>
+        </a>
+
+        <!-- Navigation Semântica -->
+        <nav role="navigation" aria-label="Menu principal">
+          <ul>
+            <li><a href="#home" onclick="showPage('home')" class="nav-link active" aria-current="page">Home</a></li>
+            <li><a href="#sobre" onclick="showPage('sobre')" class="nav-link">Sobre</a></li>
+            <li><a href="#produtos" onclick="showPage('produtos')" class="nav-link">Produtos</a></li>
+            <li><a href="#servicos" onclick="showPage('servicos')" class="nav-link">Serviços</a></li>
+            <li><a href="#contato" onclick="showPage('contato')" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Semântico -->
+    <main role="main">
+      <div class="container">
+        <!-- Página Home -->
+        <section id="home" class="page-section active" aria-labelledby="home-title">
+          <div class="hero">
+            <div class="hero-content">
+              <h1 id="home-title">Experiência Premium em Café</h1>
+              <p>Descubra sabores únicos e aromas incomparáveis em cada xícara, cuidadosamente preparada por nossos mestres baristas.</p>
+              <a href="#sobre" onclick="showPage('sobre')" class="cta-button">
+                <span>Conheça Nossa História</span> →
+              </a>
+            </div>
+          </div>
+
+          <section aria-labelledby="diferenciais-title">
+            <h2 id="diferenciais-title" style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary);">Nossos Diferenciais</h2>
+
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-icon">🌱</div>
+                <h3>Origem Sustentável</h3>
+                <p>Parcerias diretas com produtores que respeitam o meio ambiente e práticas de comércio justo, garantindo qualidade e responsabilidade social.</p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">🔥</div>
+                <h3>Torra Artesanal</h3>
+                <p>Processo de torra em pequenos lotes, controlado por especialistas para preservar características únicas de cada região produtora.</p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">👨‍🍳</div>
+                <h3>Baristas Especializados</h3>
+                <p>Equipe certificada em métodos de extração avançados, garantindo o preparo perfeito para cada perfil de grão e preferência do cliente.</p>
+              </article>
+            </div>
+          </section>
+
+          <aside>
+            <h3>💡 Dica do Especialista</h3>
+            <p>Para apreciar melhor nossos cafés especiais, experimente-os sem açúcar nos primeiros goles. Isso permite que você identifique as notas de sabor únicas de cada origem.</p>
+          </aside>
+        </section>
+
+        <!-- Página Sobre -->
+        <section id="sobre" class="page-section" aria-labelledby="sobre-title">
+          <article>
+            <h1 id="sobre-title">Nossa Jornada do Grão à Xícara</h1>
+
+            <div class="image-showcase">🏭 Nossa Moderna Torrefação Artesanal</div>
+
+            <h2>Raízes Profundas, Visão Moderna</h2>
+            <p>Fundado em 2018 por uma família apaixonada por café, o Café Artesanal nasceu da união entre tradição e inovação. Começamos em uma pequena torrefação familiar e hoje somos reconhecidos como pioneiros em café de especialidade na região, mantendo sempre nossos valores fundamentais.</p>
+
+            <p>Nossa filosofia vai além do simples preparo de café - criamos experiências sensoriais memoráveis que conectam pessoas, culturas e tradições através de cada xícara servida com excelência e paixão.</p>
+
+            <h2>Compromisso com a Excelência</h2>
+            <p>Cada etapa do nosso processo é meticulosamente planejada: desde a seleção criteriosa dos melhores grãos em fazendas parceiras, passando pelo controle rigoroso da torra, até o treinamento contínuo de nossa equipe em técnicas avançadas de extração.</p>
+
+            <div class="image-showcase">🌍 Sustentabilidade e Responsabilidade Social</div>
+
+            <h2>Impacto Positivo</h2>
+            <p>Acreditamos que um grande café deve contribuir para um mundo melhor. Por isso, mantemos programas de sustentabilidade ambiental, apoiamos comunidades produtoras e investimos em tecnologias limpas em nossa operação.</p>
+
+            <p>Nosso compromisso com a qualidade nos levou a conquistar certificações internacionais e o reconhecimento de especialistas, mas nossa maior recompensa continua sendo o sorriso de satisfação de cada cliente.</p>
+          </article>
+
+          <aside>
+            <h3>🏆 Nossos Reconhecimentos</h3>
+            <p>Certificação SCA (Specialty Coffee Association), Prêmio Café de Qualidade 2023, e Selo de Sustentabilidade Ambiental.</p>
+          </aside>
+        </section>
+
+        <!-- Página Produtos (NOVA) -->
+        <section id="produtos" class="page-section" aria-labelledby="produtos-title">
+          <article>
+            <h1 id="produtos-title">Nossos Produtos Especiais</h1>
+            <p>Explore nossa coleção cuidadosamente selecionada de cafés premium, cada um com características únicas que refletem sua origem e processo de cultivo.</p>
+          </article>
+
+          <!-- Layout FLEX conforme solicitado -->
+          <section aria-labelledby="cafe-origens-title">
+            <h2 id="cafe-origens-title" style="text-align: center; font-size: 2.2rem; margin: 3rem 0; color: var(--secondary);">Cafés por Origem</h2>
+            
+            <div class="flex-container">
+              <article class="flex-item">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">☕ Café Brasileiro</h3>
+                <p><strong>Origem:</strong> Minas Gerais</p>
+                <p><strong>Notas:</strong> Chocolate, caramelo e nozes</p>
+                <p><strong>Altitude:</strong> 1.200m</p>
+                <p style="margin-top: 1rem;">Nosso clássico brasileiro com corpo encorpado e sabor marcante, perfeito para começar o dia com energia.</p>
+              </article>
+              
+              <article class="flex-item flex-item-large">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🌋 Café Colombiano Premium</h3>
+                <p><strong>Origem:</strong> Huila, Colômbia</p>
+                <p><strong>Notas:</strong> Frutas cítricas, mel e flores</p>
+                <p><strong>Altitude:</strong> 1.800m</p>
+                <p style="margin-top: 1rem;">Café de altitude excepcional com acidez equilibrada e complexidade aromática única. Cultivado em pequenas fazendas familiares que mantêm tradições centenárias de produção. Este café representa o melhor da cafeticultura colombiana com certificação de comércio justo.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,107,53,0.1); border-radius: 8px;">
+                  <strong>Destaque:</strong> Medalha de Ouro no Concurso de Qualidade 2024
+                </div>
+              </article>
+              
+              <article class="flex-item">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🏔️ Café Etíope</h3>
+                <p><strong>Origem:</strong> Yirgacheffe</p>
+                <p><strong>Notas:</strong> Bergamota, chá e lavanda</p>
+                <p><strong>Altitude:</strong> 2.000m</p>
+                <p style="margin-top: 1rem;">Berço do café com perfil floral delicado e acidez vibrante, para paladares refinados.</p>
+              </article>
+            </div>
+          </section>
+
+          <section aria-labelledby="blends-title">
+            <h2 id="blends-title" style="text-align: center; font-size: 2.2rem; margin: 3rem 0; color: var(--secondary);">Nossos Blends Especiais</h2>
+            
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-icon">🌅</div>
+                <h3>Blend Manhã</h3>
+                <p><strong>Composição:</strong> 60% Arábica, 40% Robusta</p>
+                <p><strong>Intensidade:</strong> 7/10</p>
+                <p>Perfeito para começar o dia com energia. Equilibrio ideal entre corpo e acidez.</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--accent);">R$ 35,90 / 250g</p>
+              </article>
+              
+              <article class="card">
+                <div class="card-icon">🌙</div>
+                <h3>Blend Noturno</h3>
+                <p><strong>Composição:</strong> 80% Arábica, 20% Robusta</p>
+                <p><strong>Intensidade:</strong> 5/10</p>
+                <p>Suave e aromático, ideal para momentos de relaxamento no final do dia.</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--accent);">R$ 42,90 / 250g</p>
+              </article>
+              
+              <article class="card">
+                <div class="card-icon">👑</div>
+                <h3>Blend Premium</h3>
+                <p><strong>Composição:</strong> 100% Arábica</p>
+                <p><strong>Intensidade:</strong> 8/10</p>
+                <p>Nossa seleção mais refinada com grãos especiais de múltiplas origens.</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--accent);">R$ 58,90 / 250g</p>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- Página Serviços (NOVA) -->
+        <section id="servicos" class="page-section" aria-labelledby="servicos-title">
+          <article>
+            <h1 id="servicos-title">Nossos Serviços Especializados</h1>
+            <p>Oferecemos uma gama completa de serviços para empresas, eventos e para quem deseja se aprofundar no mundo do café.</p>
+          </article>
+
+          <div class="image-showcase">🎓 Centro de Treinamento e Cursos</div>
+
+          <section aria-labelledby="cursos-title">
+            <h2 id="cursos-title" style="text-align: center; font-size: 2.2rem; margin: 3rem 0; color: var(--secondary);">Cursos e Treinamentos</h2>
+            
+            <div class="cards-grid">
+              <article class="price-table">
+                <h3>Curso Básico</h3>
+                <div class="price">R$ 180</div>
+                <ul class="price-list">
+                  <li>História do café</li>
+                  <li>Métodos de preparo</li>
+                  <li>Degustação básica</li>
+                  <li>4 horas de duração</li>
+                </ul>
+                <button onclick="alert('Curso Básico - Entre em contato para agendar!')">Inscrever-se</button>
+              </article>
+              
+              <article class="price-table featured">
+                <h3>Curso Profissional</h3>
+                <div class="price">R$ 450</div>
+                <ul class="price-list">
+                  <li>Tudo do curso básico</li>
+                  <li>Técnicas avançadas</li>
+                  <li>Latte Art</li>
+                  <li>Certificação SCA</li>
+                  <li>16 horas + prática</li>
+                </ul>
+                <button onclick="alert('Curso Profissional - Entre em contato para agendar!')">Inscrever-se</button>
+              </article>
+              
+              <article class="price-table">
+                <h3>Curso Master</h3>
+                <div class="price">R$ 890</div>
+                <ul class="price-list">
+                  <li>Curso completo</li>
+                  <li>Torra artesanal</li>
+                  <li>Gestão de cafeteria</li>
+                  <li>Mentoria individual</li>
+                  <li>40 horas + estágio</li>
+                </ul>
+                <button onclick="alert('Curso Master - Entre em contato para agendar!')">Inscrever-se</button>
+              </article>
+            </div>
+          </section>
+
+          <section aria-labelledby="servicos-empresas-title">
+            <h2 id="servicos-empresas-title" style="text-align: center; font-size: 2.2rem; margin: 3rem 0; color: var(--secondary);">Serviços Corporativos</h2>
+            
+            <div class="flex-container">
+              <article class="flex-item">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🏢 Coffee Break Empresarial</h3>
+                <p>Transforme suas reuniões e eventos corporativos com nosso serviço especializado de coffee break.</p>
+                <ul style="margin: 1rem 0; list-style-position: inside;">
+                  <li>Barista profissional no local</li>
+                  <li>Equipamentos premium</li>
+                  <li>Cafés especiais selecionados</li>
+                  <li>Acompanhamentos gourmet</li>
+                </ul>
+                <p style="font-weight: 600; color: var(--accent);">A partir de R$ 15 por pessoa</p>
+              </article>
+              
+              <article class="flex-item">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🚚 Fornecimento Empresarial</h3>
+                <p>Mantenha sua empresa sempre abastecida com cafés frescos e de qualidade superior.</p>
+                <ul style="margin: 1rem 0; list-style-position: inside;">
+                  <li>Entrega programada</li>
+                  <li>Preços corporativos especiais</li>
+                  <li>Consultoria em equipamentos</li>
+                  <li>Treinamento da equipe</li>
+                </ul>
+                <p style="font-weight: 600; color: var(--accent);">Desconto progressivo por volume</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Formulário de Orçamento -->
+          <section aria-labelledby="orcamento-title">
+            <h2 id="orcamento-title" style="text-align: center; font-size: 2.2rem; margin: 3rem 0; color: var(--secondary);">Solicite um Orçamento</h2>
+            
+            <form onsubmit="enviarOrcamento(event)" aria-label="Formulário de orçamento de serviços">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="empresa">Nome da Empresa</label>
+                  <input type="text" id="empresa" name="empresa" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                  <label for="responsavel">Nome do Responsável</label>
+                  <input type="text" id="responsavel" name="responsavel" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                  <label for="email-orcamento">Email Corporativo</label>
+                  <input type="email" id="email-orcamento" name="email" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                  <label for="telefone-orcamento">Telefone</label>
+                  <input type="tel" id="telefone-orcamento" name="telefone" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                  <label for="servico">Tipo de Serviço</label>
+                  <select id="servico" name="servico" required aria-required="true">
+                    <option value="">Selecione um serviço</option>
+                    <option value="coffee-break">Coffee Break</option>
+                    <option value="fornecimento">Fornecimento Empresarial</option>
+                    <option value="curso-corporativo">Curso Corporativo</option>
+                    <option value="consultoria">Consultoria</option>
+                    <option value="evento-especial">Evento Especial</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="pessoas">Número de Pessoas</label>
+                  <input type="number" id="pessoas" name="pessoas" min="1" placeholder="Ex: 50" />
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="detalhes">Detalhes do Evento/Serviço</label>
+                  <textarea id="detalhes" name="detalhes" rows="4" placeholder="Descreva suas necessidades específicas, data do evento, frequência de fornecimento, etc."></textarea>
+                </div>
+              </div>
+
+              <button type="submit">Solicitar Orçamento</button>
+            </form>
+          </section>
+
+          <aside>
+            <h3>⏱️ Tempo de Resposta</h3>
+            <p>Enviamos orçamentos detalhados em até 24 horas. Para eventos urgentes, entre em contato diretamente via WhatsApp.</p>
+          </aside>
+        </section>
+
+        <!-- Página Contato -->
+        <section id="contato" class="page-section" aria-labelledby="contato-title">
+          <article>
+            <h1 id="contato-title">Vamos Conversar</h1>
+            <p>Estamos sempre disponíveis para compartilhar nossa paixão pelo café. Entre em contato para conhecer nossos produtos, agendar degustações ou esclarecer qualquer dúvida sobre nossos serviços.</p>
+
+            <div class="image-showcase">📍 Visite Nossa Casa do Café</div>
+
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-icon">📍</div>
+                <h3>Endereço</h3>
+                <p>Rua dos Cafezais, 123<br />Centro - Cidade do Café, Natal/RN<br />CEP: 12345-678</p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">📞</div>
+                <h3>Contato</h3>
+                <p>Telefone: (84) 9999-8888<br />Email: contato@cafeartesanal.com.br<br />WhatsApp: (84) 9999-7777</p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">🕒</div>
+                <h3>Funcionamento</h3>
+                <p>Segunda a Sexta: 7h às 19h<br />Sábados: 8h às 16h<br />Domingos: 9h às 15h</p>
+              </article>
+            </div>
+          </article>
+
+          <!-- Formulário de Contato Principal -->
+          <section aria-labelledby="form-contato-title">
+            <h2 id="form-contato-title" style="text-align: center; margin: 3rem 0; color: var(--primary);">Envie sua Mensagem</h2>
+
+            <form onsubmit="enviarMensagem(event)" aria-label="Formulário de contato">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="nome">Nome Completo</label>
+                  <input type="text" id="nome" name="nome" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                  <label for="telefone">Telefone</label>
+                  <input type="tel" id="telefone" name="telefone" />
+                </div>
+
+                <div class="form-group">
+                  <label for="assunto">Assunto</label>
+                  <input type="text" id="assunto" name="assunto" required aria-required="true" />
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="mensagem">Mensagem</label>
+                  <textarea id="mensagem" name="mensagem" rows="6" required aria-required="true"></textarea>
+                </div>
+              </div>
+
+              <button type="submit">Enviar Mensagem</button>
+            </form>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer Semântico -->
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Café Artesanal</h3>
+          <p>Criando experiências únicas através do café de especialidade desde 2018.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Navegação</h3>
+          <ul class="footer-links">
+            <li><a href="#home" onclick="showPage('home')">Home</a></li>
+            <li><a href="#sobre" onclick="showPage('sobre')">Sobre</a></li>
+            <li><a href="#produtos" onclick="showPage('produtos')">Produtos</a></li>
+            <li><a href="#servicos" onclick="showPage('servicos')">Serviços</a></li>
+            <li><a href="#contato" onclick="showPage('contato')">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Redes Sociais</h3>
+          <ul class="footer-links">
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="YouTube">YouTube</a></li>
+            <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p>📧 contato@cafeartesanal.com.br<br />📞 (84) xxxxx-xxxx<br />📍 Cidade do Café, Natal/RN</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Café Artesanal. Todos os direitos reservados.</p>
+        <p>Desenvolvido com ☕ e tecnologia moderna</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navegação entre páginas
+      function showPage(pageId) {
+        // Remove active de todas as seções
+        document.querySelectorAll(".page-section").forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        // Adiciona active na seção selecionada
+        document.getElementById(pageId).classList.add("active");
+
+        // Atualiza navegação ativa
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
+        });
+
+        event.target.classList.add("active");
+        event.target.setAttribute("aria-current", "page");
+
+        // Scroll suave para o topo
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Atualiza URL sem recarregar página
+        history.pushState(null, null, `#${pageId}`);
+      }
+
+      // Formulário de contato principal
+      function enviarMensagem(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const dados = {
+          nome: formData.get("nome"),
+          email: formData.get("email"),
+          telefone: formData.get("telefone"),
+          assunto: formData.get("assunto"),
+          mensagem: formData.get("mensagem"),
+        };
+
+        // Simulação de envio
+        const loadingBtn = event.target.querySelector("button[type='submit']");
+        const originalText = loadingBtn.textContent;
+
+        loadingBtn.textContent = "Enviando...";
+        loadingBtn.disabled = true;
+
+        setTimeout(() => {
+          alert(`Obrigado, ${dados.nome}! 🎉\n\nSua mensagem foi enviada com sucesso.\nEntraremos em contato através do email ${dados.email} em breve.\n\nAssunto: ${dados.assunto}`);
+
+          // Reset do formulário
+          event.target.reset();
+          loadingBtn.textContent = originalText;
+          loadingBtn.disabled = false;
+        }, 2000);
+      }
+
+      // Formulário de orçamento
+      function enviarOrcamento(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const dados = {
+          empresa: formData.get("empresa"),
+          responsavel: formData.get("responsavel"),
+          email: formData.get("email"),
+          telefone: formData.get("telefone"),
+          servico: formData.get("servico"),
+          pessoas: formData.get("pessoas"),
+          detalhes: formData.get("detalhes"),
+        };
+
+        // Simulação de envio
+        const loadingBtn = event.target.querySelector("button[type='submit']");
+        const originalText = loadingBtn.textContent;
+
+        loadingBtn.textContent = "Processando...";
+        loadingBtn.disabled = true;
+
+        setTimeout(() => {
+          alert(`Olá ${dados.responsavel} da ${dados.empresa}! 🚀\n\nSeu pedido de orçamento para ${dados.servico} foi recebido com sucesso.\n\nEnviaremos uma proposta detalhada para ${dados.email} em até 24 horas.\n\nObrigado pela confiança!`);
+
+          // Reset do formulário
+          event.target.reset();
+          loadingBtn.textContent = originalText;
+          loadingBtn.disabled = false;
+        }, 2500);
+      }
+
+      // Efeito parallax no header
+      let lastScrollTop = 0;
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          header.style.transform = "translateY(-100%)";
+        } else {
+          header.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+
+      // Navegação por URL
+      window.addEventListener("load", () => {
+        const hash = window.location.hash.substring(1);
+        if (hash && document.getElementById(hash)) {
+          showPage(hash);
+        }
+      });
+
+      // Acessibilidade: navegação por teclado
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document.activeElement.blur();
+        }
+      });
+
+      // Lazy loading para animações
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = "running";
+          }
+        });
+      }, observerOptions);
+
+      // Observar elementos para animação
+      document.querySelectorAll(".card, .image-showcase, .flex-item").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Validação de formulário em tempo real
+      document.querySelectorAll("input, textarea, select").forEach((field) => {
+        field.addEventListener("blur", function () {
+          validateField(this);
+        });
+      });
+
+      function validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+
+        switch (field.type) {
+          case "email":
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = emailRegex.test(value);
+            break;
+          case "tel":
+            const phoneRegex = /^[\d\s\-\(\)]+$/;
+            isValid = !value || phoneRegex.test(value);
+            break;
+          case "number":
+            isValid = !value || (!isNaN(value) && parseInt(value) > 0);
+            break;
+          default:
+            if (field.required) {
+              isValid = value.length > 0;
+            }
+        }
+
+        if (!isValid && value) {
+          field.style.borderColor = "#dc3545";
+          field.style.boxShadow = "0 0 0 3px rgba(220, 53, 69, 0.1)";
+        } else {
+          field.style.borderColor = "";
+          field.style.boxShadow = "";
+        }
+      }
+
+      // Analytics de interação (simulado)
+      function trackInteraction(action, element) {
+        console.log(`User interaction: ${action} on ${element}`);
+      }
+
+      // Adicionar listeners para tracking
+      document.querySelectorAll("button, a, .card").forEach((element) => {
+        element.addEventListener("click", function () {
+          trackInteraction("click", this.tagName + (this.className ? "." + this.className.split(" ")[0] : ""));
+        });
+      });
+
+      // Sistema de notificações
+      function showNotification(message, type = "success") {
+        const notification = document.createElement("div");
+        notification.className = `notification ${type}`;
+        notification.style.cssText = `
+          position: fixed;
+          top: 100px;
+          right: 20px;
+          background: ${type === "success" ? "var(--gradient-primary)" : "#dc3545"};
+          color: white;
+          padding: 1rem 2rem;
+          border-radius: 12px;
+          box-shadow: var(--shadow-strong);
+          z-index: 10000;
+          transform: translateX(400px);
+          transition: transform 0.3s ease;
+        `;
+        notification.textContent = message;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+          notification.style.transform = "translateX(0)";
+        }, 100);
+
+        setTimeout(() => {
+          notification.style.transform = "translateX(400px)";
+          setTimeout(() => {
+            if (document.body.contains(notification)) {
+              document.body.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
